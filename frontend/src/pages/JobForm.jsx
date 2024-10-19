@@ -11,14 +11,16 @@ const JobForm = () => {
   const [showForm, setShowForm] = useState(false); // State to toggle form visibility
 
   const toggleForm = () => {
+   
     setShowForm(!showForm); // Toggle form visibility
   };
 
   const handleSubmit = async (e) => {
+    window.location.reload();
     e.preventDefault();
     try {
       // Make the POST request to your API
-      const response = await axios.post('http://localhost:5002/api/auth/createinterview', {
+      const response = await axios.post('https://asignment-cuvvet.onrender.com/api/auth/createinterview', {
         jobTitle,
         jobDescription,
         experienceLevel,
@@ -78,6 +80,7 @@ const JobForm = () => {
               onChange={(e) => setJobTitle(e.target.value)}
               placeholder="Enter Job Title"
               className="w-3/4 border-2 border-gray-300 rounded-xl px-3 py-2 focus:outline-none focus:border-blue-500"
+              required
             />
           </div>
 
@@ -92,6 +95,7 @@ const JobForm = () => {
               onChange={(e) => setJobDescription(e.target.value)}
               placeholder="Enter Job Description"
               className="w-3/4 border-2 border-gray-300 rounded-xl px-3 py-2 focus:outline-none focus:border-blue-500 h-24"
+              required
             />
           </div>
 
@@ -105,6 +109,7 @@ const JobForm = () => {
               value={experienceLevel}
               onChange={(e) => setExperienceLevel(e.target.value)}
               className="w-3/4 border-2 border-gray-300 rounded-xl px-3 py-2 focus:outline-none focus:border-blue-500"
+              required
             >
               <option value="">Select Experience Level</option>
               <option value="junior">Junior</option>
@@ -125,6 +130,7 @@ const JobForm = () => {
               onChange={(e) => setCandidateEmail(e.target.value)}
               placeholder="xyz@gmail.com"
               className="w-3/4 border-2 border-gray-300 rounded-xl px-3 py-2 focus:outline-none focus:border-blue-500"
+              required
             />
           </div>
 
@@ -139,6 +145,7 @@ const JobForm = () => {
               value={endDate}
               onChange={(e) => setEndDate(e.target.value)}
               className="w-3/4 border-2 border-gray-300 rounded-2xl px-3 py-2 focus:outline-none focus:border-blue-500"
+              required
             />
           </div>
 
