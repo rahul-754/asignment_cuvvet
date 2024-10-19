@@ -7,7 +7,14 @@ const authRoutes = require('./routes/authRoutes');
 // const jobRoutes = require('./routes/jobRoutes');
 
 const app = express();
-app.use(cors());
+
+// Configure CORS to allow all origins
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI, {
