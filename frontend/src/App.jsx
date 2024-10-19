@@ -13,7 +13,7 @@ function App() {
             <Router>
                 <Navbar />
                 <Routes>
-                    <Route path="/register" element={<Register />} />
+                    <Route path="/" element={<Register />} />
                     <Route path="/otpverification" element={<OTPVerification/>}/>
                     <Route path="/otpverified" element={<OTPVerified/>}/>
                     <Route path="/jobsform" element={<JobForm />} />
