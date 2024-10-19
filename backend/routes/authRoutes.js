@@ -80,7 +80,7 @@ router.post('/register', [
             from: process.env.GMAIL_USER,
             to: email,
             subject: 'Verify Your Email',
-            text: `Click the link to verify your email: ${emailOTP}`,
+            text: `Your otp for the email verification : ${emailOTP}`,
         };
         await transporter.sendMail(mailOptions);
         try {
