@@ -11,12 +11,10 @@ const JobForm = () => {
   const [showForm, setShowForm] = useState(false); // State to toggle form visibility
 
   const toggleForm = () => {
-   
     setShowForm(!showForm); // Toggle form visibility
   };
 
   const handleSubmit = async (e) => {
-    window.location.reload();
     e.preventDefault();
     try {
       // Make the POST request to your API
